@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title data-i18n="ct.title">ติดต่อเจ้าหน้าที่ | ตู้ยืมอุปกรณ์กีฬา</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/contact.css" />
+  </head>
+  <body>
+    <main class="page">
+      <!-- ส่วนหัว: ปุ่มย้อนกลับ (กลับหน้าเมนู) และชื่อหน้า -->
+      <header class="contact-header">
+        <a
+          class="glass icon-btn"
+          href="menu.html"
+          aria-label="ย้อนกลับ"
+          data-i18n-aria="common.back"
+        >
+          <svg
+            width="22"
+            height="22"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="#0b2a5b"
+            stroke-width="2.4"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M15 6l-6 6 6 6" />
+          </svg>
+        </a>
+        <div>
+          <h1 class="contact-title" data-i18n="ct.title">ติดต่อเจ้าหน้าที่</h1>
+          <p class="contact-sub" data-i18n="ct.sub">เจ้าหน้าที่ผู้ดูแลตู้</p>
+        </div>
+      </header>
+
+      <!-- ข้อมูลติดต่อ (ข้อความและลิงก์ของปุ่ม JavaScript ใส่ให้จาก CONTACT ใน data.js) -->
+      <div class="contact-list">
+        <!-- โทรศัพท์ -->
+        <div class="glass contact-item">
+          <span class="contact-icon">
+            <svg
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#1d4ed8"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path
+                d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"
+              />
+            </svg>
+          </span>
+          <span class="contact-text">
+            <small data-i18n="ct.phone">โทรศัพท์</small>
+            <strong id="phoneText"></strong>
+          </span>
+          <a
+            class="contact-btn contact-btn-solid"
+            id="callBtn"
+            href="#"
+            data-i18n="ct.call"
+            >โทร</a
+          >
+        </div>
+
+        <!-- LINE -->
+        <div class="glass contact-item">
+          <span class="contact-icon">
+            <svg
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#1d4ed8"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M4 5h16v11H9l-5 4V5z" />
+            </svg>
+          </span>
+          <span class="contact-text">
+            <small>LINE</small>
+            <strong id="lineText"></strong>
+          </span>
+          <a
+            class="contact-btn contact-btn-glass"
+            id="chatBtn"
+            href="#"
+            data-i18n="ct.chat"
+            >เปิดแชท</a
+          >
+        </div>
+
+        <!-- จุดรับคืนอุปกรณ์ -->
+        <div class="glass contact-item">
+          <span class="contact-icon">
+            <svg
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#1d4ed8"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path
+                d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21zM12 12a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z"
+              />
+            </svg>
+          </span>
+          <span class="contact-text">
+            <small data-i18n="ct.place">จุดรับคืนอุปกรณ์</small>
+            <strong id="placeText"></strong>
+          </span>
+        </div>
+
+        <!-- เวลาทำการ -->
+        <div class="glass contact-item">
+          <span class="contact-icon">
+            <svg
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#1d4ed8"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18zM12 7v5l3 2" />
+            </svg>
+          </span>
+          <span class="contact-text">
+            <small data-i18n="ct.hours">เวลาทำการ</small>
+            <strong id="hoursText"></strong>
+          </span>
+        </div>
+
+        <!-- พบปัญหากับตู้? (กดไปหน้าแจ้งปัญหา) -->
+        <a class="glass contact-item" href="report.html">
+          <span class="contact-icon">
+            <svg
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#1d4ed8"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M12 3 2 21h20L12 3zM12 10v5M12 18v.5" />
+            </svg>
+          </span>
+          <span class="contact-text">
+            <strong data-i18n="ct.problem">พบปัญหากับตู้?</strong>
+            <small data-i18n="ct.problemSub"
+              >แจ้งประตูไม่เปิด / เซนเซอร์ผิดปกติ</small
+            >
+          </span>
+          <svg
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="rgba(11,42,91,.6)"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M9 6l6 6-6 6" />
+          </svg>
+        </a>
+      </div>
+
+      <!-- ข้อความย้ำท้ายหน้า (กล่องกระจก ไอคอนเตือนสีน้ำเงิน) -->
+      <div class="glass reminder">
+        <div class="reminder-icon">
+          <svg
+            width="22"
+            height="22"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="#ffffff"
+            stroke-width="2.4"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M12 3 2 21h20L12 3zM12 10v5M12 18v.5" />
+          </svg>
+        </div>
+        <p class="reminder-text" data-i18n="note.returnDirect">
+          การคืนอุปกรณ์ ต้องนำมาคืนที่เจ้าหน้าที่โดยตรงเท่านั้น
+        </p>
+      </div>
+    </main>
+
+    <!-- ลำดับสำคัญ: common.js, i18n.js และ data.js ต้องมาก่อน contact.js -->
+    <script src="js/common.js"></script>
+    <script src="js/i18n.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/contact.js"></script>
+  </body>
+</html>

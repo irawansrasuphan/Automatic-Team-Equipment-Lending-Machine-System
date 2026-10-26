@@ -1,0 +1,229 @@
+/* ==========================================================
+   language.css  —  สไตล์เฉพาะหน้าภาษา (language.html)
+   ========================================================== */
+
+/* ----- ส่วนหัว ----- */
+.lang-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.lang-title {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.lang-sub {
+  margin: 0;
+  font-size: 14px;
+  color: rgba(11, 42, 91, 0.7);
+}
+
+/* ----- การ์ดเลือกภาษา ----- */
+.lang-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.lang-card {
+  width: 100%;
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-align: left;
+  color: var(--navy-text);
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.lang-card:hover {
+  background: rgba(29, 78, 216, 0.09);
+}
+
+.lang-card:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(29, 78, 216, 0.2);
+}
+
+/* วงกลมฟ้าอ่อนใส่อักษรย่อภาษา (TH / EN) */
+.lang-abbr {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--blue-soft);
+  color: var(--blue);
+  font-size: 20px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+}
+
+.lang-text {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.4;
+}
+
+.lang-text strong {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.lang-text small {
+  font-size: 14px;
+  color: rgba(11, 42, 91, 0.7);
+}
+
+/* วงกลมติ๊กท้ายการ์ด: ยังไม่เลือก = วงโปร่ง, เลือกแล้ว = น้ำเงินทึบมีเครื่องหมายถูก */
+.lang-check {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 2px solid rgba(29, 78, 216, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+}
+
+.lang-check svg {
+  display: none;
+}
+
+.lang-card.selected {
+  border: 1.5px solid var(--blue);
+}
+
+.lang-card.selected .lang-check {
+  background: var(--blue);
+  border-color: var(--blue);
+}
+
+.lang-card.selected .lang-check svg {
+  display: block;
+}
+
+/* ----- ตัวอย่างหน้าจอ (แสดงใบเดียว ตามภาษาที่เลือก) ----- */
+.section-title {
+  margin: 6px 0 0;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.preview-card {
+  padding: 14px 16px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border: 1.5px solid var(--blue);
+}
+
+.preview-label {
+  font-size: 13px;
+  line-height: 20px;
+  color: rgba(11, 42, 91, 0.7);
+}
+
+.preview-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.preview-row img {
+  width: 76px;
+  height: 76px;
+  object-fit: contain;
+  flex: none;
+}
+
+.preview-info {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.preview-name {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.preview-meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.preview-total {
+  font-size: 14px;
+  color: rgba(11, 42, 91, 0.7);
+}
+
+/* ปุ่มจำลองในตัวอย่าง (กดไม่ได้ ใช้ดูหน้าตาเท่านั้น) */
+.preview-btn {
+  width: 100%;
+  height: 48px;
+  border-radius: 999px;
+  background: var(--blue);
+  color: #ffffff;
+  font-size: 17px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ----- ท้ายหน้า ----- */
+.lang-bottom {
+  margin-top: auto; /* ดันไปอยู่ล่างสุดของจอ */
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.lang-note {
+  margin: 0;
+  text-align: center;
+  font-size: 14px;
+  color: rgba(11, 42, 91, 0.75);
+}
+
+/* ปุ่มหลังกดบันทึกแล้ว */
+.btn-main:disabled {
+  cursor: default;
+  filter: none;
+  transform: none;
+}
+
+/* จอกว้าง: ไม่ต้องดันไปล่างสุดของจอ */
+@media (min-width: 768px) {
+  .lang-bottom {
+    margin-top: 10px;
+  }
+}
+
+/* จอแคบมาก: ลดขนาดตัวอย่างลงเล็กน้อย */
+@media (max-width: 360px) {
+  .preview-row img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .lang-abbr {
+    width: 48px;
+    height: 48px;
+    font-size: 18px;
+  }
+}

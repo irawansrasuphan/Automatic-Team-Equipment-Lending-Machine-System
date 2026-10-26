@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title data-i18n="menu.title">เมนู | ตู้ยืมอุปกรณ์กีฬา</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/menu.css" />
+  </head>
+  <body>
+    <main class="page">
+      <!-- ส่วนหัว: ชื่อหน้า และปุ่มปิด (กลับหน้าหลัก) -->
+      <header class="menu-header">
+        <h1 class="menu-title" data-i18n="menu.title">เมนู</h1>
+        <a
+          class="glass icon-btn"
+          href="home.html"
+          aria-label="ปิดเมนู"
+          data-i18n-aria="menu.close"
+        >
+          <svg
+            width="22"
+            height="22"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="#0b2a5b"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M6 6l12 12M18 6L6 18" />
+          </svg>
+        </a>
+      </header>
+
+      <!-- การ์ดข้อมูลผู้ใช้ (JavaScript ใส่ให้) -->
+      <section class="glass user-card" id="userCard"></section>
+
+      <!-- กล่อง "กำลังยืมอยู่" (JavaScript ใส่ให้ เฉพาะตอนที่กำลังยืม) -->
+      <div id="loanBox"></div>
+
+      <!-- รายการเมนู 5 อัน -->
+      <nav class="menu-list">
+        <a class="glass menu-item" href="history.html">
+          <span class="menu-icon">
+            <svg
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#1d4ed8"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18zM12 7v5l3 2" />
+            </svg>
+          </span>
+          <span class="menu-text">
+            <strong data-i18n="hs.title">ประวัติการยืม</strong>
+            <small data-i18n="menu.historySub">ดูรายการที่ยืมทั้งหมด</small>
+          </span>
+          <!-- ตัวเลขจำนวนรายการ (JavaScript ใส่ให้) -->
+          <span class="menu-badge" id="historyCount"></span>
+          <svg
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="rgba(11,42,91,.6)"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M9 6l6 6-6 6" />
+          </svg>
+        </a>
+
+        <a class="glass menu-item" href="rules.html">
+          <span class="menu-icon">
+            <svg
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#1d4ed8"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M5 4h14v16H5zM5 17h14" />
+            </svg>
+          </span>
+          <span class="menu-text">
+            <strong data-i18n="rules.title">วิธีใช้งานและกติกา</strong>
+            <small data-i18n="menu.rulesSub"
+              >1 บัญชียืมได้ 1 อุปกรณ์ · คืนก่อนยืมใหม่</small
+            >
+          </span>
+          <svg
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="rgba(11,42,91,.6)"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M9 6l6 6-6 6" />
+          </svg>
+        </a>
+
+        <a class="glass menu-item" href="contact.html">
+          <span class="menu-icon">
+            <svg
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#1d4ed8"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path
+                d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"
+              />
+            </svg>
+          </span>
+          <span class="menu-text">
+            <strong data-i18n="ct.title">ติดต่อเจ้าหน้าที่</strong>
+            <small data-i18n="menu.contactSub"
+              >เจ้าหน้าที่ผู้ดูแลตู้ ในเวลาทำการ</small
+            >
+          </span>
+          <svg
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="rgba(11,42,91,.6)"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M9 6l6 6-6 6" />
+          </svg>
+        </a>
+
+        <a class="glass menu-item" href="report.html">
+          <span class="menu-icon">
+            <svg
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#1d4ed8"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M12 3 2 21h20L12 3zM12 10v5M12 18v.5" />
+            </svg>
+          </span>
+          <span class="menu-text">
+            <strong data-i18n="rp.title">แจ้งปัญหาตู้</strong>
+            <small data-i18n="menu.reportSub"
+              >ประตูไม่เปิด / เซนเซอร์ผิดปกติ</small
+            >
+          </span>
+          <svg
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="rgba(11,42,91,.6)"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M9 6l6 6-6 6" />
+          </svg>
+        </a>
+
+        <a class="glass menu-item" href="language.html">
+          <span class="menu-icon">
+            <svg
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#1d4ed8"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path
+                d="M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18zM3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"
+              />
+            </svg>
+          </span>
+          <span class="menu-text">
+            <strong data-i18n="lang.title">ภาษา</strong>
+            <small data-i18n="menu.langSub">ไทย · English</small>
+          </span>
+          <svg
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="rgba(11,42,91,.6)"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M9 6l6 6-6 6" />
+          </svg>
+        </a>
+      </nav>
+
+      <!-- ปุ่มออกจากระบบ -->
+      <button type="button" class="logout-btn" id="logoutBtn">
+        <svg
+          width="22"
+          height="22"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="#1d4ed8"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <path d="M10 4H5v16h5M15 8l4 4-4 4M19 12H9" />
+        </svg>
+        <span data-i18n="menu.logout">ออกจากระบบ</span>
+      </button>
+    </main>
+
+    <!-- ลำดับสำคัญ: common.js, i18n.js และ data.js ต้องมาก่อน menu.js -->
+    <script src="js/common.js"></script>
+    <script src="js/i18n.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/menu.js"></script>
+  </body>
+</html>

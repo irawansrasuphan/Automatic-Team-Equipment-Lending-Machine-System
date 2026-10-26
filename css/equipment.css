@@ -1,0 +1,209 @@
+/* ==========================================================
+   equipment.css  —  สไตล์เฉพาะหน้าเลือกช่อง (equipment.html)
+   ========================================================== */
+
+/* ----- ส่วนหัว ----- */
+.equip-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.equip-title {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.equip-position {
+  margin: 0;
+  font-size: 14px;
+  color: rgba(11, 42, 91, 0.7);
+}
+
+/* ----- การ์ดสรุป ----- */
+.summary-card {
+  padding: 18px 20px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.summary-img {
+  width: 92px;
+  height: 92px;
+  object-fit: contain;
+  flex: none;
+}
+
+.summary-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.summary-title {
+  font-size: 18px;
+}
+
+.summary-free {
+  font-size: 14px;
+  color: rgba(11, 42, 91, 0.7);
+}
+
+/* ----- การ์ดช่อง ----- */
+.slot-list {
+  display: flex;
+  flex-direction: column; /* มือถือ: เรียงลงมาทีละใบ */
+  gap: 14px;
+}
+
+.slot-card {
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap; /* ถ้าที่ไม่พอ ให้ปุ่มลงไปบรรทัดใหม่ */
+  gap: 14px;
+}
+
+.slot-img {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+  flex: none;
+}
+
+/* วงกลมเส้นประ (รอเติม) และกล่องไอคอนประแจ (ซ่อม) */
+.slot-circle {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: 2px dashed rgba(29, 78, 216, 0.4);
+  flex: none;
+}
+
+.slot-icon {
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+}
+
+.slot-info {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2px;
+}
+
+.slot-side {
+  font-size: 14px;
+  color: rgba(11, 42, 91, 0.7);
+}
+
+.slot-number {
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.slot-info .chip {
+  margin-top: 4px;
+}
+
+.slot-lock {
+  flex: none;
+}
+
+/* ปุ่ม "ยืมช่องนี้" (ใช้สไตล์ .btn-main จาก style.css แล้วปรับขนาด) */
+.btn-slot {
+  width: auto;
+  height: 46px;
+  padding: 0 22px;
+  font-size: 16px;
+}
+
+/* กล่องสีเทา "คืนอุปกรณ์ก่อนจึงยืมได้" (ลงไปอยู่บรรทัดใหม่ของการ์ด) */
+.slot-locked {
+  flex-basis: 100%;
+  height: 44px;
+  border-radius: 999px;
+  background: rgba(100, 116, 139, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #64748b;
+}
+
+/* ป้ายสีเทาอมน้ำเงิน (ถูกยืมอยู่ / รอเจ้าหน้าที่เติม) */
+.chip-gray {
+  background: rgba(100, 116, 139, 0.15);
+  color: #475569;
+}
+
+/* ----- สีการ์ดตามสถานะ ----- */
+.slot-borrowed {
+  background: rgba(100, 116, 139, 0.12);
+}
+
+.slot-borrowed .slot-img {
+  filter: grayscale(1);
+  opacity: 0.55;
+}
+
+.slot-empty {
+  opacity: 0.75;
+  border: 1.5px dashed rgba(29, 78, 216, 0.35);
+}
+
+.slot-repair {
+  border: 1.5px solid var(--danger);
+}
+
+/* ----- ข้อความแนะนำท้ายหน้า (กล่องกระจก) ----- */
+.tip {
+  margin-top: auto; /* ดันไปอยู่ล่างสุดของจอ */
+  padding: 14px 18px;
+}
+
+.tip-text {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--navy-text);
+}
+
+/* ==========================================================
+   ปรับตามขนาดหน้าจอ (Responsive)
+   ========================================================== */
+
+/* แท็บเล็ตและคอม: กรอบกว้างขึ้น การ์ดช่อง 3 ใบเรียงข้างกัน */
+@media (min-width: 768px) {
+  .page-equip {
+    max-width: 920px;
+    justify-content: flex-start;
+  }
+
+  .slot-list {
+    flex-direction: row;
+  }
+
+  .slot-card {
+    flex: 1;
+    min-width: 0;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .btn-slot,
+  .slot-locked {
+    width: 100%;
+  }
+}

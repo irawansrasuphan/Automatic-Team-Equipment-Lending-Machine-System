@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title data-i18n="rules.title">
+      วิธีใช้งานและกติกา | ตู้ยืมอุปกรณ์กีฬา
+    </title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/rules.css" />
+  </head>
+  <body>
+    <main class="page">
+      <!-- ส่วนหัว: ปุ่มย้อนกลับ (กลับหน้าเมนู) และชื่อหน้า -->
+      <header class="rules-header">
+        <a
+          class="glass icon-btn"
+          href="menu.html"
+          aria-label="ย้อนกลับ"
+          data-i18n-aria="common.back"
+        >
+          <svg
+            width="22"
+            height="22"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="#0b2a5b"
+            stroke-width="2.4"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M15 6l-6 6 6 6" />
+          </svg>
+        </a>
+        <h1 class="rules-title" data-i18n="rules.title">วิธีใช้งานและกติกา</h1>
+      </header>
+
+      <!-- ขั้นตอนการยืม 4 ขั้น -->
+      <h2 class="section-title" data-i18n="rules.steps">ขั้นตอนการยืม</h2>
+      <section class="glass step-box">
+        <ol class="step-list">
+          <li class="step-item">
+            <span class="step-num">1</span>
+            <span class="step-label" data-i18n="rules.step1">เลือกอุปกรณ์</span>
+          </li>
+          <li class="step-item">
+            <span class="step-num">2</span>
+            <span class="step-label" data-i18n="rules.step2"
+              >เลือกช่องที่ว่าง</span
+            >
+          </li>
+          <li class="step-item">
+            <span class="step-num">3</span>
+            <span class="step-label" data-i18n="rules.step3"
+              >กดยืม รอประตูปลดล็อก</span
+            >
+          </li>
+          <li class="step-item">
+            <span class="step-num">4</span>
+            <span class="step-label" data-i18n="rules.step4"
+              >หยิบของ ปิดประตู</span
+            >
+          </li>
+        </ol>
+      </section>
+
+      <!-- กติกาสำคัญ 4 ข้อ -->
+      <h2 class="section-title" data-i18n="rules.important">กติกาสำคัญ</h2>
+      <div class="rule-list">
+        <div class="glass rule-item">
+          <span class="rule-icon">
+            <svg
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#1d4ed8"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path
+                d="M12 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM4 21a8 8 0 0 1 16 0"
+              />
+            </svg>
+          </span>
+          <span class="rule-text">
+            <strong data-i18n="rules.r1">1 บัญชี ยืมได้ 1 อุปกรณ์</strong>
+            <small data-i18n="rules.r1s">ยืมเพิ่มไม่ได้จนกว่าจะคืน</small>
+          </span>
+        </div>
+        <div class="glass rule-item">
+          <span class="rule-icon">
+            <svg
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#1d4ed8"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M9 14L4 9l5-5M4 9h10a6 6 0 0 1 0 12h-3" />
+            </svg>
+          </span>
+          <span class="rule-text">
+            <strong data-i18n="rules.r2">คืนก่อนจึงยืมใหม่ได้</strong>
+            <small data-i18n="rules.r2s"
+              >คืนที่เจ้าหน้าที่ แล้วจึงยืมครั้งต่อไป</small
+            >
+          </span>
+        </div>
+        <div class="glass rule-item">
+          <span class="rule-icon">
+            <svg
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#1d4ed8"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path
+                d="M9 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM3 20a6 6 0 0 1 12 0M17 11a3 3 0 1 0 0-6M17 14a5 5 0 0 1 4 6"
+              />
+            </svg>
+          </span>
+          <span class="rule-text">
+            <strong data-i18n="rules.r3"
+              >ยืมพร้อมกันได้ แต่ห้ามยืมช่องเดียวกัน</strong
+            >
+            <small data-i18n="rules.r3s"
+              >อุปกรณ์ชนิดเดียวกัน คนละช่องยืมพร้อมกันได้</small
+            >
+          </span>
+        </div>
+        <div class="glass rule-item">
+          <span class="rule-icon">
+            <svg
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#1d4ed8"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M7 21V4h10v17M4 21h16" />
+            </svg>
+          </span>
+          <span class="rule-text">
+            <strong data-i18n="rules.r4">ปิดประตูให้สนิททุกครั้ง</strong>
+            <small data-i18n="rules.r4s"
+              >ไฟเตือนจะกระพริบจนกว่าประตูจะปิด</small
+            >
+          </span>
+        </div>
+      </div>
+
+      <!-- ข้อความย้ำท้ายหน้า (กล่องกระจก ไอคอนเตือนสีน้ำเงิน) -->
+      <div class="glass reminder">
+        <div class="reminder-icon">
+          <svg
+            width="22"
+            height="22"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="#ffffff"
+            stroke-width="2.4"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M12 3 2 21h20L12 3zM12 10v5M12 18v.5" />
+          </svg>
+        </div>
+        <p class="reminder-text" data-i18n="note.returnRemind">
+          ย้ำ: กรุณานำอุปกรณ์ไปคืนที่เจ้าหน้าที่ผู้ดูแลโดยตรง ในเวลาทำการ
+        </p>
+      </div>
+    </main>
+
+    <!-- ลำดับสำคัญ: common.js ต้องมาก่อน i18n.js -->
+    <script src="js/common.js"></script>
+    <script src="js/i18n.js"></script>
+  </body>
+</html>

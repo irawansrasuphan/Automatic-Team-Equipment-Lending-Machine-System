@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title data-i18n="rp.title">แจ้งปัญหาตู้ | ตู้ยืมอุปกรณ์กีฬา</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/report.css" />
+  </head>
+  <body>
+    <main class="page">
+      <!-- ส่วนหัว: ปุ่มย้อนกลับ (กลับหน้าเมนู) และชื่อหน้า -->
+      <header class="report-header">
+        <a
+          class="glass icon-btn"
+          href="menu.html"
+          aria-label="ย้อนกลับ"
+          data-i18n-aria="common.back"
+        >
+          <svg
+            width="22"
+            height="22"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="#0b2a5b"
+            stroke-width="2.4"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M15 6l-6 6 6 6" />
+          </svg>
+        </a>
+        <div>
+          <h1 class="report-title" data-i18n="rp.title">แจ้งปัญหาตู้</h1>
+          <p class="report-sub" data-i18n="rp.sub">เจ้าหน้าที่จะตรวจสอบให้</p>
+        </div>
+      </header>
+
+      <!-- ฟอร์มแจ้งปัญหา -->
+      <form class="report-form" id="reportForm" novalidate>
+        <section class="glass form-card">
+          <!-- ตู้ด้านที่มีปัญหา -->
+          <div class="field">
+            <span class="field-label" id="sideLabel" data-i18n="rp.side"
+              >ตู้ด้านที่มีปัญหา</span
+            >
+            <div
+              class="chip-group"
+              role="radiogroup"
+              aria-labelledby="sideLabel"
+            >
+              <button
+                type="button"
+                class="chip-btn"
+                data-group="side"
+                data-value="A"
+              >
+                ด้าน A
+              </button>
+              <button
+                type="button"
+                class="chip-btn"
+                data-group="side"
+                data-value="B"
+              >
+                ด้าน B
+              </button>
+              <button
+                type="button"
+                class="chip-btn"
+                data-group="side"
+                data-value="C"
+              >
+                ด้าน C
+              </button>
+            </div>
+            <p class="error" id="errorSide"></p>
+          </div>
+
+          <!-- ช่อง -->
+          <div class="field">
+            <span class="field-label" id="slotLabel" data-i18n="rp.slot"
+              >ช่อง</span
+            >
+            <div
+              class="chip-group"
+              role="radiogroup"
+              aria-labelledby="slotLabel"
+            >
+              <button
+                type="button"
+                class="chip-btn"
+                data-group="slot"
+                data-value="1"
+              >
+                ช่อง 1
+              </button>
+              <button
+                type="button"
+                class="chip-btn"
+                data-group="slot"
+                data-value="2"
+              >
+                ช่อง 2
+              </button>
+              <button
+                type="button"
+                class="chip-btn"
+                data-group="slot"
+                data-value="3"
+              >
+                ช่อง 3
+              </button>
+            </div>
+            <!-- บอกว่าช่องนี้ใส่อุปกรณ์อะไร (JavaScript ใส่ให้) -->
+            <p class="field-hint" id="slotHint"></p>
+            <p class="error" id="errorSlot"></p>
+          </div>
+
+          <!-- ประเภทปัญหา -->
+          <div class="field">
+            <span class="field-label" id="typeLabel" data-i18n="rp.type"
+              >ประเภทปัญหา</span
+            >
+            <div
+              class="chip-group"
+              role="radiogroup"
+              aria-labelledby="typeLabel"
+            >
+              <button
+                type="button"
+                class="chip-btn"
+                data-group="type"
+                data-value="door_stuck"
+                data-i18n="rp.t.door_stuck"
+              >
+                ประตูไม่เปิด
+              </button>
+              <button
+                type="button"
+                class="chip-btn"
+                data-group="type"
+                data-value="door_loose"
+                data-i18n="rp.t.door_loose"
+              >
+                ประตูไม่ล็อก
+              </button>
+              <button
+                type="button"
+                class="chip-btn"
+                data-group="type"
+                data-value="sensor"
+                data-i18n="rp.t.sensor"
+              >
+                เซนเซอร์ผิดปกติ
+              </button>
+              <button
+                type="button"
+                class="chip-btn"
+                data-group="type"
+                data-value="mismatch"
+                data-i18n="rp.t.mismatch"
+              >
+                อุปกรณ์ไม่ตรงที่แสดง
+              </button>
+              <button
+                type="button"
+                class="chip-btn"
+                data-group="type"
+                data-value="other"
+                data-i18n="rp.t.other"
+              >
+                อื่นๆ
+              </button>
+            </div>
+            <p class="error" id="errorType"></p>
+          </div>
+
+          <!-- รายละเอียดเพิ่มเติม -->
+          <div class="field">
+            <label class="field-label" for="detail" data-i18n="rp.detail"
+              >รายละเอียดเพิ่มเติม</label
+            >
+            <textarea
+              id="detail"
+              rows="4"
+              maxlength="500"
+              placeholder="เล่าอาการที่พบ เช่น กดยืมแล้วประตูไม่เปิด"
+              data-i18n-placeholder="rp.detailPh"
+            ></textarea>
+            <p class="error" id="errorDetail"></p>
+          </div>
+
+          <!-- แนบรูปภาพ (ไม่บังคับ) -->
+          <div class="field">
+            <input type="file" id="photo" accept="image/*" hidden />
+            <label class="photo-btn" id="photoBtn" for="photo">
+              <svg
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#1d4ed8"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <path
+                  d="M4 8h3l2-3h6l2 3h3v11H4zM12 17a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"
+                />
+              </svg>
+              <span id="photoText" data-i18n="rp.photo"
+                >แนบรูปภาพ (ไม่บังคับ)</span
+              >
+            </label>
+            <button
+              type="button"
+              class="photo-remove"
+              id="photoRemove"
+              data-i18n="rp.photoRemove"
+              hidden
+            >
+              ลบรูปที่แนบ
+            </button>
+            <p class="error" id="errorPhoto"></p>
+          </div>
+        </section>
+
+        <p class="form-note" data-i18n="rp.note">
+          เจ้าหน้าที่จะติดต่อกลับตามเบอร์ที่ลงทะเบียนไว้
+        </p>
+        <button type="submit" class="btn-main" data-i18n="rp.submit">
+          ส่งเรื่องถึงเจ้าหน้าที่
+        </button>
+      </form>
+
+      <!-- หน้าจอหลังส่งเรื่องสำเร็จ (ซ่อนไว้ก่อน JavaScript จะเปิดให้) -->
+      <section class="report-done" id="reportDone" hidden>
+        <div class="glass done-card">
+          <div class="done-icon">
+            <svg
+              width="30"
+              height="30"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#ffffff"
+              stroke-width="2.8"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M5 12.5l4.5 4.5L19 7.5" />
+            </svg>
+          </div>
+          <h2 class="done-title" data-i18n="rp.doneTitle">
+            ส่งเรื่องเรียบร้อยแล้ว
+          </h2>
+          <p class="done-text" id="doneText"></p>
+          <p class="done-text" data-i18n="rp.note">
+            เจ้าหน้าที่จะติดต่อกลับตามเบอร์ที่ลงทะเบียนไว้
+          </p>
+        </div>
+        <a class="btn-main" href="home.html" data-i18n="common.backHome"
+          >กลับสู่หน้าหลัก</a
+        >
+      </section>
+    </main>
+
+    <!-- ลำดับสำคัญ: common.js, i18n.js และ data.js ต้องมาก่อน report.js -->
+    <script src="js/common.js"></script>
+    <script src="js/i18n.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/report.js"></script>
+  </body>
+</html>

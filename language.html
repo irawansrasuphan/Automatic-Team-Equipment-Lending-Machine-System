@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title data-i18n="lang.title">ภาษา | ตู้ยืมอุปกรณ์กีฬา</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/language.css" />
+  </head>
+  <body>
+    <main class="page">
+      <!-- ส่วนหัว: ปุ่มย้อนกลับ (กลับหน้าเมนู) และชื่อหน้า -->
+      <header class="lang-header">
+        <a
+          class="glass icon-btn"
+          href="menu.html"
+          aria-label="ย้อนกลับ"
+          data-i18n-aria="common.back"
+        >
+          <svg
+            width="22"
+            height="22"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="#0b2a5b"
+            stroke-width="2.4"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M15 6l-6 6 6 6" />
+          </svg>
+        </a>
+        <div>
+          <h1 class="lang-title" data-i18n="lang.title">ภาษา</h1>
+          <p class="lang-sub" data-i18n="lang.sub">Language</p>
+        </div>
+      </header>
+
+      <!-- เลือกภาษา: กดแล้วเปลี่ยนภาษาทั้งเว็บทันที -->
+      <div class="lang-list" role="radiogroup" aria-label="ภาษา / Language">
+        <button
+          type="button"
+          class="glass lang-card"
+          data-lang="th"
+          role="radio"
+          aria-checked="false"
+        >
+          <span class="lang-abbr">TH</span>
+          <span class="lang-text">
+            <strong>ภาษาไทย</strong>
+            <small>Thai</small>
+          </span>
+          <span class="lang-check"
+            ><svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#ffffff"
+              stroke-width="3"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M5 12.5l4.5 4.5L19 7.5" /></svg
+          ></span>
+        </button>
+        <button
+          type="button"
+          class="glass lang-card"
+          data-lang="en"
+          role="radio"
+          aria-checked="false"
+        >
+          <span class="lang-abbr">EN</span>
+          <span class="lang-text">
+            <strong>English</strong>
+            <small>อังกฤษ</small>
+          </span>
+          <span class="lang-check"
+            ><svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#ffffff"
+              stroke-width="3"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M5 12.5l4.5 4.5L19 7.5" /></svg
+          ></span>
+        </button>
+      </div>
+
+      <!-- ตัวอย่างหน้าจอ: แสดงเฉพาะภาษาที่เลือกอยู่ (JavaScript ใส่ชื่ออุปกรณ์และจำนวนให้) -->
+      <h2 class="section-title" data-i18n="lang.preview">ตัวอย่างหน้าจอ</h2>
+      <div class="glass preview-card">
+        <span class="preview-label" data-i18n="lang.previewLabel">ไทย</span>
+        <div class="preview-row">
+          <img src="images/ball-basketball.png" alt="" />
+          <div class="preview-info">
+            <strong class="preview-name" id="previewName"></strong>
+            <div class="preview-meta">
+              <span class="chip chip-white" id="previewChip"></span>
+              <span class="preview-total" data-i18n="home.totalSlots"
+                >ทั้งหมด 3 ช่อง</span
+              >
+            </div>
+          </div>
+        </div>
+        <span class="preview-btn" data-i18n="home.borrow">ยืม</span>
+      </div>
+
+      <!-- ข้อความท้ายหน้า + ปุ่มบันทึก (กลับหน้าเมนู) -->
+      <div class="lang-bottom">
+        <p class="lang-note" data-i18n="lang.note">เปลี่ยนภาษาแล้วมีผลทันที</p>
+        <button
+          type="button"
+          class="btn-main"
+          id="saveBtn"
+          data-i18n="lang.save"
+        >
+          บันทึก
+        </button>
+      </div>
+    </main>
+
+    <!-- ลำดับสำคัญ: common.js, i18n.js ต้องมาก่อน language.js -->
+    <script src="js/common.js"></script>
+    <script src="js/i18n.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/language.js"></script>
+  </body>
+</html>

@@ -1,0 +1,137 @@
+/* ==========================================================
+   rules.css  —  สไตล์เฉพาะหน้าวิธีใช้งานและกติกา (rules.html)
+   ========================================================== */
+
+/* ----- ส่วนหัว ----- */
+.rules-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.rules-title {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+/* ----- หัวข้อแต่ละส่วน ----- */
+.section-title {
+  margin: 6px 0 0;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+/* ----- ขั้นตอนการยืม ----- */
+.step-box {
+  padding: 18px 10px;
+}
+
+.step-list {
+  margin: 0;
+  padding: 0;
+  list-style: none; /* เอาจุดนำหน้าของ <ol> ออก */
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 ช่องเท่ากัน */
+  gap: 6px;
+}
+
+.step-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  text-align: center;
+}
+
+/* วงกลมน้ำเงินใส่เลขขั้นตอน */
+.step-num {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--blue);
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.step-label {
+  font-size: 12px;
+  line-height: 1.4;
+  color: rgba(11, 42, 91, 0.8);
+}
+
+/* ----- กติกาสำคัญ ----- */
+.rule-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.rule-item {
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+/* วงกลมฟ้าอ่อนใส่ไอคอน */
+.rule-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--blue-soft);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+}
+
+.rule-text {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.4;
+}
+
+.rule-text strong {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.rule-text small {
+  font-size: 12px;
+  color: rgba(11, 42, 91, 0.7);
+}
+
+/* ----- กล่องข้อความย้ำ ----- */
+.reminder {
+  margin-top: auto; /* ดันไปอยู่ล่างสุดของจอ */
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 16px;
+  border: 1.5px solid var(--blue);
+}
+
+.reminder-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+}
+
+.reminder-text {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.5;
+}

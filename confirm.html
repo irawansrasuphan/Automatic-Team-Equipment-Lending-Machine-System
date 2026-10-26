@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title data-i18n="cf.pageTitle">ยืนยันการยืม | ตู้ยืมอุปกรณ์กีฬา</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/confirm.css" />
+  </head>
+  <body>
+    <main class="page">
+      <!-- การ์ด "คุณกำลังยืม" (JavaScript ใส่ให้) -->
+      <section class="glass item-card" id="itemCard"></section>
+
+      <!-- ปุ่มยืนยันการยืม -->
+      <button
+        type="button"
+        class="btn-main btn-confirm"
+        id="confirmBtn"
+        data-i18n="cf.confirm"
+      >
+        ยืนยันการยืม
+      </button>
+
+      <!-- ขั้นตอน 4 ขั้น (JavaScript สร้างให้) -->
+      <ol class="glass step-box" id="stepList"></ol>
+
+      <!-- ข้อความย้ำเรื่องการคืน (กล่องกระจก ไอคอนเตือนสีน้ำเงิน) -->
+      <div class="glass reminder">
+        <div class="reminder-icon">
+          <svg
+            width="22"
+            height="22"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="#ffffff"
+            stroke-width="2.4"
+            aria-hidden="true"
+          >
+            <path d="M12 3 2 21h20L12 3zM12 10v5M12 18v.5" />
+          </svg>
+        </div>
+        <p class="reminder-text" data-i18n="note.returnRemind">
+          ย้ำ: กรุณานำอุปกรณ์ไปคืนที่เจ้าหน้าที่ผู้ดูแลโดยตรง ในเวลาทำการ
+        </p>
+      </div>
+
+      <!-- ปุ่มกลับหน้าหลัก -->
+      <a
+        class="glass btn-back"
+        id="backBtn"
+        href="home.html"
+        data-i18n="common.backHome"
+        >กลับสู่หน้าหลัก</a
+      >
+    </main>
+
+    <!-- ลำดับสำคัญ: common.js, i18n.js และ data.js ต้องมาก่อน confirm.js -->
+    <script src="js/common.js"></script>
+    <script src="js/i18n.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/confirm.js"></script>
+  </body>
+</html>

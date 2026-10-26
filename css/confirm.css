@@ -1,0 +1,193 @@
+/* ==========================================================
+   confirm.css  —  สไตล์เฉพาะหน้ายืนยันการยืม (confirm.html)
+   ========================================================== */
+
+/* ----- การ์ด "คุณกำลังยืม" ----- */
+.item-card {
+  padding: 18px 20px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.item-img {
+  width: 76px;
+  height: 76px;
+  object-fit: contain;
+  flex: none;
+}
+
+.item-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  min-width: 0;
+}
+
+.item-small {
+  font-size: 14px;
+  color: rgba(11, 42, 91, 0.7);
+}
+
+.item-name {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.item-note {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.5;
+  color: rgba(11, 42, 91, 0.8);
+}
+
+/* ----- ปุ่มยืนยัน ----- */
+.btn-confirm {
+  height: 60px;
+}
+
+/* ตอนกดไปแล้ว ปุ่มจะจางและกดซ้ำไม่ได้ */
+.btn-confirm:disabled {
+  opacity: 0.6;
+  cursor: default;
+  box-shadow: none;
+}
+
+/* ----- กล่องขั้นตอน ----- */
+.step-box {
+  margin: 0;
+  padding: 24px 20px;
+  list-style: none; /* เอาจุดนำหน้าของ <ol> ออก */
+}
+
+.step {
+  position: relative;
+  display: flex;
+  gap: 16px;
+  padding-bottom: 26px;
+}
+
+.step:last-child {
+  padding-bottom: 0;
+}
+
+/* เส้นเชื่อมระหว่างวงกลม */
+.step::before {
+  content: "";
+  position: absolute;
+  left: 18px;
+  top: 40px;
+  bottom: 0;
+  width: 4px;
+  background: rgba(29, 78, 216, 0.18);
+}
+
+.step:last-child::before {
+  display: none;
+}
+
+.step.done::before {
+  background: var(--blue);
+}
+
+/* วงกลมหน้าขั้นตอน */
+.step-mark {
+  position: relative;
+  z-index: 1;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  flex: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  font-weight: 600;
+  background: #ffffff;
+  border: 2px solid rgba(29, 78, 216, 0.25);
+  color: var(--navy-text);
+}
+
+.step.done .step-mark {
+  background: var(--blue);
+  border-color: var(--blue);
+}
+
+.step.active .step-mark {
+  background: #ffffff;
+  border: 5px solid rgba(29, 78, 216, 0.35);
+  color: var(--blue);
+}
+
+.step-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding-top: 2px;
+}
+
+.step-title {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.step-desc {
+  font-size: 14px;
+  color: rgba(11, 42, 91, 0.7);
+}
+
+/* ขั้นที่ยังไม่ถึง: ตัวหนังสือจาง */
+.step.pending .step-text {
+  opacity: 0.55;
+}
+
+/* ----- กล่องข้อความย้ำเรื่องการคืน ----- */
+.reminder {
+  margin-top: auto; /* ดันไปอยู่ล่างสุดของจอ */
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 16px;
+  border: 1.5px solid var(--blue);
+}
+
+.reminder-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+}
+
+.reminder-text {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+/* ----- ปุ่มกลับสู่หน้าหลัก ----- */
+.btn-back {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 56px;
+  border-radius: 999px;
+  color: var(--navy-text);
+  font:
+    600 18px "Prompt",
+    sans-serif;
+  text-decoration: none;
+}
+
+/* ตอนกำลังยืม: ปุ่มกดไม่ได้ */
+.btn-back.is-disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}

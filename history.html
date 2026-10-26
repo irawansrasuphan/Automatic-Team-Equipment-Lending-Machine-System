@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title data-i18n="hs.title">ประวัติการยืม | ตู้ยืมอุปกรณ์กีฬา</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/history.css" />
+  </head>
+  <body>
+    <main class="page page-history">
+      <!-- ส่วนหัว: ปุ่มย้อนกลับ และชื่อหน้า -->
+      <header class="history-header">
+        <a
+          class="glass icon-btn"
+          href="home.html"
+          aria-label="ย้อนกลับ"
+          data-i18n-aria="common.back"
+        >
+          <svg
+            width="22"
+            height="22"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="#0b2a5b"
+            stroke-width="2.4"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M15 6l-6 6 6 6" />
+          </svg>
+        </a>
+        <h1 class="history-title" data-i18n="hs.title">ประวัติการยืม</h1>
+      </header>
+
+      <!-- การ์ดสรุปตัวเลข (JavaScript ใส่ให้) -->
+      <section class="glass stats" id="stats"></section>
+
+      <!-- แท็บกรองรายการ -->
+      <div class="glass tabs">
+        <button
+          type="button"
+          class="tab-btn active"
+          data-tab="all"
+          data-i18n="hs.tabAll"
+        >
+          ทั้งหมด
+        </button>
+        <button
+          type="button"
+          class="tab-btn"
+          data-tab="open"
+          data-i18n="status.notReturned"
+        >
+          ยังไม่คืน
+        </button>
+        <button
+          type="button"
+          class="tab-btn"
+          data-tab="returned"
+          data-i18n="status.returned"
+        >
+          คืนแล้ว
+        </button>
+      </div>
+
+      <!-- รายการยืม (JavaScript สร้างให้) -->
+      <div class="history-list" id="historyList"></div>
+
+      <!-- ข้อความแนะนำท้ายหน้า (กล่องกระจก) -->
+      <footer class="glass tip">
+        <p class="tip-text" data-i18n="hs.tip">
+          คืนอุปกรณ์ที่เจ้าหน้าที่ทุกครั้งนะ
+        </p>
+      </footer>
+
+      <!-- ปุ่มจำลองการคืน (แสดงเมื่อกำลังยืมอยู่ และเปิดสวิตช์ใน data.js) -->
+      <button
+        type="button"
+        class="btn-return"
+        id="returnBtn"
+        data-i18n="hs.returnTest"
+        hidden
+      >
+        คืนอุปกรณ์ (ปุ่มทดสอบ)
+      </button>
+    </main>
+
+    <!-- ลำดับสำคัญ: common.js, i18n.js และ data.js ต้องมาก่อน history.js -->
+    <script src="js/common.js"></script>
+    <script src="js/i18n.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/history.js"></script>
+  </body>
+</html>

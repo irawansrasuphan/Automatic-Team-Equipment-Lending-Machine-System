@@ -1,0 +1,165 @@
+/* ==========================================================
+   history.css  —  สไตล์เฉพาะหน้าประวัติการยืม (history.html)
+   ========================================================== */
+
+/* ----- ส่วนหัว ----- */
+.history-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.history-title {
+  margin: 0;
+  font-size: 26px;
+  font-weight: 600;
+}
+
+/* ----- การ์ดสรุปตัวเลข 3 ช่อง ----- */
+.stats {
+  padding: 18px 12px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  text-align: center;
+}
+
+.stat-num {
+  display: block;
+  font-size: 34px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.stat-label {
+  font-size: 14px;
+  color: rgba(11, 42, 91, 0.7);
+}
+
+/* ----- แท็บกรองรายการ ----- */
+.tabs {
+  padding: 6px;
+  border-radius: 999px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4px;
+}
+
+.tab-btn {
+  height: 44px;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--navy-text);
+  font:
+    600 16px "Prompt",
+    sans-serif;
+  cursor: pointer;
+}
+
+/* แท็บที่เลือกอยู่ เป็นสีน้ำเงิน ตัวอักษรขาว */
+.tab-btn.active {
+  background: var(--blue);
+  color: #ffffff;
+}
+
+/* ----- รายการยืม ----- */
+.history-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.history-card {
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+/* รายการที่ยังไม่คืน: ขอบน้ำเงินเข้ม */
+.history-card.is-open {
+  border: 1.5px solid var(--blue);
+}
+
+.history-img {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+  flex: none;
+}
+
+.history-info {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.4;
+}
+
+.history-name {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.history-place {
+  font-size: 15px;
+  color: rgba(11, 42, 91, 0.85);
+}
+
+.history-date {
+  font-size: 14px;
+  color: rgba(11, 42, 91, 0.65);
+}
+
+/* ข้อความเมื่อไม่มีรายการ */
+.history-empty {
+  padding: 28px 16px;
+  text-align: center;
+  color: rgba(11, 42, 91, 0.7);
+}
+
+/* ----- ข้อความแนะนำท้ายหน้า (กล่องกระจก) ----- */
+.tip {
+  margin-top: auto; /* ดันไปอยู่ล่างสุดของจอ */
+  padding: 14px 18px;
+}
+
+.tip-text {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--navy-text);
+}
+
+/* ----- ปุ่มคืนอุปกรณ์ (ปุ่มทดสอบ) ----- */
+.btn-return {
+  height: 52px;
+  border-radius: 999px;
+  border: 1.5px dashed rgba(29, 78, 216, 0.45);
+  background: transparent;
+  color: var(--navy-text);
+  font:
+    500 16px "Prompt",
+    sans-serif;
+  cursor: pointer;
+}
+
+.btn-return:hover {
+  background: rgba(29, 78, 216, 0.08);
+}
+
+/* ทำให้ attribute hidden ใช้ได้ แม้ปุ่มมี display ของตัวเอง */
+.btn-return[hidden] {
+  display: none;
+}
+
+/* ==========================================================
+   ปรับตามขนาดหน้าจอ (Responsive)
+   ========================================================== */
+
+/* แท็บเล็ตและคอม: เริ่มจากด้านบนของจอ (กรอบกว้างขึ้นตาม style.css แล้ว) */
+@media (min-width: 768px) {
+  .page-history {
+    justify-content: flex-start;
+  }
+}

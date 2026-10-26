@@ -1,0 +1,179 @@
+/* ==========================================================
+   menu.css  —  สไตล์เฉพาะหน้าเมนู (menu.html)
+   ========================================================== */
+
+/* ----- ส่วนหัว ----- */
+.menu-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.menu-title {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+/* ----- การ์ดผู้ใช้ ----- */
+.user-card {
+  padding: 16px 18px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* วงกลมน้ำเงินใส่ตัวอักษรแรกของชื่อ */
+.avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--blue);
+  color: #ffffff;
+  font-size: 24px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+}
+
+.user-info {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.45;
+}
+
+.user-name {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.user-detail {
+  font-size: 13px;
+  color: rgba(11, 42, 91, 0.7);
+}
+
+/* ----- กล่อง "กำลังยืมอยู่" ----- */
+.menu-loan {
+  padding: 10px 16px;
+  border: 1.5px solid var(--blue);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.menu-loan img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  flex: none;
+}
+
+.menu-loan-text {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.4;
+}
+
+.menu-loan-small {
+  font-size: 12px;
+  color: rgba(11, 42, 91, 0.7);
+}
+
+.menu-loan-text strong {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* ----- รายการเมนู ----- */
+.menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.menu-item {
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  color: var(--navy-text);
+  text-decoration: none;
+}
+
+.menu-item:hover {
+  background: rgba(29, 78, 216, 0.09);
+}
+
+/* วงกลมฟ้าอ่อนใส่ไอคอน */
+.menu-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--blue-soft);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+}
+
+.menu-text {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.4;
+}
+
+.menu-text strong {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.menu-text small {
+  font-size: 12px;
+  color: rgba(11, 42, 91, 0.7);
+}
+
+/* ป้ายตัวเลขจำนวนรายการประวัติ */
+.menu-badge {
+  min-width: 26px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: var(--blue);
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* ถ้ายังไม่มีตัวเลข ให้ซ่อนป้าย */
+.menu-badge:empty {
+  display: none;
+}
+
+/* ----- ปุ่มออกจากระบบ ----- */
+.logout-btn {
+  height: 52px;
+  margin-top: auto; /* ดันไปอยู่ล่างสุดของจอ */
+  border: 1.5px solid var(--blue);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--navy-text);
+  font:
+    600 17px "Prompt",
+    sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.logout-btn:hover {
+  background: rgba(29, 78, 216, 0.08);
+}

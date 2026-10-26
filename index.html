@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title data-i18n="reg.title">ลงทะเบียน | ตู้ยืมอุปกรณ์กีฬา</title>
+
+    <!-- ฟอนต์ Prompt จาก Google Fonts (ต้องต่ออินเทอร์เน็ต) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- ไฟล์สไตล์: style.css ใช้ร่วมทุกหน้า / register.css ใช้เฉพาะหน้านี้ -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/register.css" />
+  </head>
+  <body>
+    <main class="page">
+      <!-- หัวข้อ -->
+      <div class="reg-header">
+        <div>
+          <h1 class="title" data-i18n="reg.title">ลงทะเบียน</h1>
+          <p class="subtitle" data-i18n="reg.subtitle">
+            เข้าใช้งานตู้ยืมอุปกรณ์กีฬา
+          </p>
+        </div>
+
+        <!-- ปุ่มสลับภาษาแบบแคปซูน: กดแล้วแท็บสีน้ำเงินเลื่อนไปอีกฝั่ง -->
+        <div
+          class="lang-switch"
+          id="langSwitch"
+          role="radiogroup"
+          aria-label="ภาษา / Language"
+        >
+          <span class="lang-thumb" aria-hidden="true"></span>
+          <button
+            type="button"
+            class="lang-opt"
+            data-lang="th"
+            role="radio"
+            aria-checked="false"
+            aria-label="ภาษาไทย"
+          >
+            TH
+          </button>
+          <button
+            type="button"
+            class="lang-opt"
+            data-lang="en"
+            role="radio"
+            aria-checked="false"
+            aria-label="English"
+          >
+            EN
+          </button>
+        </div>
+      </div>
+
+      <!-- ฟอร์มลงทะเบียน (novalidate = ให้ JavaScript ตรวจเอง) -->
+      <form id="registerForm" class="register-form" novalidate>
+        <div class="glass form-card">
+          <div class="field">
+            <label for="fullName" data-i18n="reg.name">ชื่อ-นามสกุล</label>
+            <input
+              id="fullName"
+              type="text"
+              placeholder="ชื่อ-นามสกุล"
+              data-i18n-placeholder="reg.namePh"
+              autocomplete="name"
+            />
+            <p class="error" id="errorName" aria-live="polite"></p>
+          </div>
+
+          <div class="field">
+            <label for="studentId" data-i18n="reg.studentId"
+              >รหัสนักศึกษา</label
+            >
+            <input
+              id="studentId"
+              type="text"
+              inputmode="numeric"
+              maxlength="10"
+              placeholder="รหัส 10 หลัก"
+              data-i18n-placeholder="reg.studentIdPh"
+            />
+            <p class="error" id="errorStudentId" aria-live="polite"></p>
+          </div>
+
+          <div class="field">
+            <label for="phone" data-i18n="reg.phone">เบอร์โทรติดต่อ</label>
+            <input
+              id="phone"
+              type="tel"
+              inputmode="numeric"
+              maxlength="12"
+              placeholder="08x-xxx-xxxx"
+              data-i18n-placeholder="reg.phonePh"
+              autocomplete="tel"
+            />
+            <p class="error" id="errorPhone" aria-live="polite"></p>
+          </div>
+
+          <div class="field">
+            <label class="consent">
+              <input id="consent" type="checkbox" />
+              <span data-i18n="reg.consent"
+                >ข้าพเจ้ายินยอมให้ใช้ข้อมูลนี้เพื่อบันทึกการยืมและติดต่อกรณีที่ไม่คืนอุปกรณ์เท่านั้น</span
+              >
+            </label>
+            <p class="error" id="errorConsent" aria-live="polite"></p>
+          </div>
+        </div>
+
+        <!-- กรอบเตือนเรื่องการคืนอุปกรณ์ -->
+        <div class="glass alert">
+          <div class="alert-icon">
+            <svg
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#ffffff"
+              stroke-width="2.4"
+              aria-hidden="true"
+            >
+              <path d="M12 3 2 21h20L12 3zM12 10v5M12 18v.5" />
+            </svg>
+          </div>
+          <span data-i18n="note.returnDirect"
+            >การคืนอุปกรณ์ ต้องนำมาคืนที่เจ้าหน้าที่โดยตรงเท่านั้น</span
+          >
+        </div>
+
+        <button type="submit" class="btn-main" data-i18n="reg.next">
+          ถัดไป
+        </button>
+      </form>
+    </main>
+
+    <!-- ไฟล์ JavaScript: common.js ใช้ร่วมทุกหน้า / register.js ใช้เฉพาะหน้านี้ -->
+    <script src="js/common.js"></script>
+    <script src="js/i18n.js"></script>
+    <script src="js/register.js"></script>
+  </body>
+</html>

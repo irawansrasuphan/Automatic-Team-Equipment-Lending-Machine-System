@@ -1,0 +1,152 @@
+/* ==========================================================
+   contact.css  —  สไตล์เฉพาะหน้าติดต่อเจ้าหน้าที่ (contact.html)
+   ========================================================== */
+
+/* ----- ส่วนหัว ----- */
+.contact-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.contact-title {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.contact-sub {
+  margin: 0;
+  font-size: 14px;
+  color: rgba(11, 42, 91, 0.7);
+}
+
+/* ----- รายการข้อมูลติดต่อ ----- */
+.contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.contact-item {
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  color: var(--navy-text);
+  text-decoration: none;
+}
+
+/* วงกลมฟ้าอ่อนใส่ไอคอน */
+.contact-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--blue-soft);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+}
+
+.contact-text {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.4;
+}
+
+.contact-text small {
+  font-size: 14px;
+  color: rgba(11, 42, 91, 0.7);
+}
+
+.contact-text strong {
+  font-size: 17px;
+  font-weight: 600;
+  overflow-wrap: anywhere; /* ข้อความยาวๆ ขึ้นบรรทัดใหม่ ไม่ล้นกรอบ */
+}
+
+/* ----- ปุ่มเล็กท้ายการ์ด (โทร / เปิดแชท) ----- */
+.contact-btn {
+  flex: none;
+  min-width: 92px;
+  height: 40px;
+  padding: 0 18px;
+  border-radius: 999px;
+  border: 1px solid rgba(29, 78, 216, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font:
+    600 16px "Prompt",
+    sans-serif;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* ปุ่มน้ำเงินทึบ (โทร) */
+.contact-btn-solid {
+  background: var(--blue);
+  border-color: var(--blue);
+  color: #ffffff;
+  box-shadow: 0 6px 16px rgba(29, 78, 216, 0.25);
+}
+
+/* ปุ่มกระจก (เปิดแชท) */
+.contact-btn-glass {
+  background: rgba(29, 78, 216, 0.06);
+  color: var(--navy-text);
+}
+
+.contact-btn:hover {
+  filter: brightness(1.06);
+}
+
+.contact-btn:active {
+  transform: scale(0.97);
+}
+
+/* ยังไม่ได้ใส่ข้อมูลจริง: ปุ่มจาง กดไม่ได้ */
+.contact-btn[aria-disabled="true"] {
+  background: rgba(11, 42, 91, 0.08);
+  border-color: transparent;
+  color: rgba(11, 42, 91, 0.35);
+  box-shadow: none;
+  pointer-events: none;
+}
+
+/* การ์ดที่กดได้ทั้งใบ (พบปัญหากับตู้?) */
+a.contact-item:hover {
+  background: rgba(29, 78, 216, 0.09);
+}
+
+/* ----- กล่องข้อความย้ำ (เหมือนหน้ากติกา) ----- */
+.reminder {
+  margin-top: auto; /* ดันไปอยู่ล่างสุดของจอ */
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 16px;
+  border: 1.5px solid var(--blue);
+}
+
+.reminder-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: none;
+}
+
+.reminder-text {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.5;
+}

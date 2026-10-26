@@ -1,0 +1,246 @@
+/* ==========================================================
+   report.css  —  สไตล์เฉพาะหน้าแจ้งปัญหาตู้ (report.html)
+   ========================================================== */
+
+/* ----- ส่วนหัว ----- */
+.report-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.report-title {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.report-sub {
+  margin: 0;
+  font-size: 14px;
+  color: rgba(11, 42, 91, 0.7);
+}
+
+/* ----- ฟอร์ม: flex:1 ทำให้ปุ่มส่งถูกดันลงไปอยู่ล่างสุดของจอ ----- */
+.report-form {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.form-card {
+  padding: clamp(16px, 5vw, 22px);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.field-label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 13px;
+  color: rgba(11, 42, 91, 0.8);
+}
+
+/* ----- ปุ่มตัวเลือก (ด้าน / ช่อง / ประเภทปัญหา) ----- */
+.chip-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.chip-btn {
+  min-height: 40px;
+  padding: 0 18px;
+  border-radius: 999px;
+  border: 1.5px solid rgba(29, 78, 216, 0.25);
+  background: #ffffff;
+  color: var(--navy-text);
+  font:
+    500 15px "Prompt",
+    sans-serif;
+  cursor: pointer;
+}
+
+.chip-btn:hover {
+  background: var(--blue-soft);
+}
+
+/* ตัวเลือกที่ถูกเลือก: น้ำเงินทึบ ตัวอักษรขาว */
+.chip-btn.selected {
+  background: var(--blue);
+  border-color: var(--blue);
+  color: #ffffff;
+  box-shadow: 0 6px 14px rgba(29, 78, 216, 0.25);
+}
+
+.chip-btn:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(29, 78, 216, 0.2);
+}
+
+/* ข้อความบอกว่าช่องนี้ใส่อุปกรณ์อะไร */
+.field-hint {
+  margin: 8px 0 0;
+  font-size: 13px;
+  color: rgba(11, 42, 91, 0.7);
+}
+
+.field-hint:empty {
+  display: none;
+}
+
+/* ----- ช่องรายละเอียด ----- */
+#detail {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1.5px solid rgba(29, 78, 216, 0.25);
+  border-radius: 18px;
+  background: #ffffff;
+  color: var(--navy-text);
+  font:
+    400 16px "Prompt",
+    sans-serif;
+  line-height: 1.5;
+  resize: vertical;
+  min-height: 108px;
+}
+
+#detail::placeholder {
+  color: rgba(11, 42, 91, 0.4);
+}
+
+#detail:focus {
+  outline: none;
+  border-color: var(--blue);
+  box-shadow: 0 0 0 4px rgba(29, 78, 216, 0.15);
+}
+
+#detail.input-error {
+  border-color: var(--danger);
+}
+
+/* ----- แนบรูปภาพ (กรอบเส้นประ) ----- */
+.photo-btn {
+  height: 52px;
+  border: 1.5px dashed rgba(29, 78, 216, 0.4);
+  border-radius: 16px;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 0 14px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.photo-btn:hover {
+  background: rgba(29, 78, 216, 0.06);
+}
+
+.photo-btn span {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis; /* ชื่อไฟล์ยาวๆ ตัดด้วย ... */
+  white-space: nowrap;
+}
+
+/* ปุ่มลบรูปที่แนบ (ตัวหนังสือเล็กๆ) */
+.photo-remove {
+  margin-top: 8px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--danger);
+  font:
+    500 13px "Prompt",
+    sans-serif;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+/* ----- ข้อความแจ้งเตือนสีแดงใต้ช่อง ----- */
+.error {
+  margin: 8px 0 0;
+  font-size: 13px;
+  color: var(--danger);
+}
+
+.error:empty {
+  display: none;
+}
+
+/* ----- ข้อความเหนือปุ่มส่ง ----- */
+.form-note {
+  margin: auto 0 0; /* ดันกลุ่มข้อความ+ปุ่มลงล่างสุด */
+  text-align: center;
+  font-size: 14px;
+  color: rgba(11, 42, 91, 0.75);
+}
+
+/* ----- หน้าจอหลังส่งเรื่องสำเร็จ ----- */
+.report-done {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.report-done[hidden],
+.report-form[hidden] {
+  display: none;
+}
+
+.done-card {
+  padding: 28px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 8px;
+}
+
+.done-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: var(--blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 6px;
+}
+
+.done-title {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.done-text {
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.5;
+  color: rgba(11, 42, 91, 0.8);
+}
+
+.report-done .btn-main {
+  margin-top: auto; /* ดันปุ่มไปอยู่ล่างสุดของจอ */
+}
+
+/* ----- แท็บเล็ตและคอม: ไม่ต้องดันปุ่มไปล่างสุดของจอ ----- */
+@media (min-width: 768px) {
+  .report-form,
+  .report-done {
+    flex: none;
+  }
+
+  .form-note,
+  .report-done .btn-main {
+    margin-top: 6px;
+  }
+}
